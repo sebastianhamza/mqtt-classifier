@@ -1,0 +1,1502 @@
+{
+  "single_label": {
+    "results": [
+      {
+        "id": "original_01",
+        "name": "serial_number",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "long_numeric",
+          "serial_no"
+        ],
+        "got_flags": [
+          "long_numeric",
+          "serial_no"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 4,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "original_02",
+        "name": "ble_gateway",
+        "expected_category": "events",
+        "got_category": "events",
+        "expected_flags": [
+          "long_numeric",
+          "mac_addr"
+        ],
+        "got_flags": [
+          "ipv6",
+          "long_numeric",
+          "mac_addr"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 8,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_03",
+        "name": "vision_objects_json",
+        "expected_category": "ai_inference",
+        "got_category": "ai_inference",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 2,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_04",
+        "name": "robotics_position",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "original_05",
+        "name": "free_text_person",
+        "expected_category": "ai_inference",
+        "got_category": "ai_inference",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_06",
+        "name": "battery_voltage",
+        "expected_category": "telemetry",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "original_07",
+        "name": "large_wh",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 2,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_08",
+        "name": "ble_csv",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "mac_addr"
+        ],
+        "got_flags": [
+          "ipv6",
+          "mac_addr"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 6,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_09",
+        "name": "log_error",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "log_line",
+        "risk_score": 2,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_10",
+        "name": "ipv_mixture",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "ipv4_local",
+          "ipv6"
+        ],
+        "got_flags": [
+          "ipv4_local",
+          "ipv6"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 4,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "original_11",
+        "name": "email_and_password",
+        "expected_category": "unstructured",
+        "got_category": "control",
+        "expected_flags": [
+          "credential",
+          "email",
+          "long_numeric"
+        ],
+        "got_flags": [
+          "credential",
+          "email",
+          "long_numeric"
+        ],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "log_line",
+        "risk_score": 11,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "original_12",
+        "name": "gps_coords",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "gps_precise"
+        ],
+        "got_flags": [
+          "gps_precise"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 4,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "original_13",
+        "name": "long_hex_blob",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "hex_blob",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "original_14",
+        "name": "serial_and_mac",
+        "expected_category": "telemetry",
+        "got_category": "unstructured",
+        "expected_flags": [
+          "long_numeric",
+          "mac_addr",
+          "serial_no"
+        ],
+        "got_flags": [
+          "ipv6",
+          "long_numeric",
+          "mac_addr",
+          "serial_no"
+        ],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 10,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "real_01",
+        "name": "complex_telemetry_nested",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": false,
+        "flag_score": 0.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "real_02",
+        "name": "control_single_word",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "real_04",
+        "name": "online_status",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "real_05",
+        "name": "opentherm_config",
+        "expected_category": "events",
+        "got_category": "control",
+        "expected_flags": [
+          "ipv4_local",
+          "long_numeric",
+          "mac_addr"
+        ],
+        "got_flags": [
+          "ipv4_local",
+          "ipv6",
+          "long_numeric",
+          "mac_addr"
+        ],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 9,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "real_06",
+        "name": "hvac_control_booleans",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "real_07",
+        "name": "simple_numeric",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "numeric",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "real_08",
+        "name": "single_word_status",
+        "expected_category": "control",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "real_09",
+        "name": "temperature_value",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "numeric",
+        "risk_score": 0,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "real_10",
+        "name": "temperature_with_label",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "real_11",
+        "name": "single_temperature_reading",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "numeric",
+        "risk_score": 0,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "real_12",
+        "name": "uptime_dict",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "real_13",
+        "name": "ip_address",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "ipv4_local"
+        ],
+        "got_flags": [
+          "ipv4_local"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 1,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "real_14",
+        "name": "aqi_array",
+        "expected_category": "telemetry",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_array",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "real_15",
+        "name": "encrypted_data",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "real_16",
+        "name": "device_weather_data",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "ipv6",
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 5,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "edge_01",
+        "name": "empty_string",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "edge_02",
+        "name": "whitespace_only",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "edge_03",
+        "name": "malformed_json",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_like",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "edge_04",
+        "name": "json_with_trailing_text",
+        "expected_category": "unstructured",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "edge_05",
+        "name": "numeric_float_pi",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "numeric",
+        "risk_score": 0,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "edge_06",
+        "name": "numeric_string_one",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "numeric",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "risk_01",
+        "name": "password_in_json",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "credential"
+        ],
+        "got_flags": [
+          "credential"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 5,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "risk_02",
+        "name": "api_key_exposure",
+        "expected_category": "unstructured",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "credential"
+        ],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": false,
+        "flag_score": 0.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "risk_03",
+        "name": "public_ip_exposure",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "ipv4_public"
+        ],
+        "got_flags": [
+          "ipv4_public"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 3,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "risk_04",
+        "name": "mac_address_leak",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "mac_addr"
+        ],
+        "got_flags": [
+          "ipv6",
+          "mac_addr"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 6,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "coverage_01",
+        "name": "multiple_keywords_telemetry",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "coverage_02",
+        "name": "multiple_keywords_control",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "coverage_03",
+        "name": "health_warning_error",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "log_line",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "coverage_04",
+        "name": "event_triggers",
+        "expected_category": "events",
+        "got_category": "events",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 2,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "coverage_05",
+        "name": "inference_objects",
+        "expected_category": "ai_inference",
+        "got_category": "ai_inference",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "telemetry_01",
+        "name": "environmental_sensors",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "telemetry_02",
+        "name": "power_consumption",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "telemetry_03",
+        "name": "gps_with_accuracy",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "gps_precise"
+        ],
+        "got_flags": [
+          "gps_precise"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 4,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "telemetry_04",
+        "name": "water_meter_reading",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "telemetry_05",
+        "name": "humidity_and_temp",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "keyvalue",
+        "risk_score": 0,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "control_01",
+        "name": "dimmer_level",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "control_02",
+        "name": "hvac_temperature_setpoint",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "control_03",
+        "name": "door_lock_command",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "control_04",
+        "name": "pump_start_stop",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "heuristic"
+      },
+      {
+        "id": "control_05",
+        "name": "multiple_switches",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "events_01",
+        "name": "door_opening_event",
+        "expected_category": "events",
+        "got_category": "events",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 2,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "events_02",
+        "name": "alert_notification",
+        "expected_category": "events",
+        "got_category": "events",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "events_03",
+        "name": "ble_beacon_advertisement",
+        "expected_category": "events",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "events_04",
+        "name": "motion_detection_alert",
+        "expected_category": "events",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [
+          "ipv6"
+        ],
+        "category_ok": false,
+        "flags_ok": false,
+        "flag_score": 0.0,
+        "structure": "text",
+        "risk_score": 3,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "events_05",
+        "name": "system_startup_event",
+        "expected_category": "events",
+        "got_category": "events",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "device_health_01",
+        "name": "memory_warning",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "device_health_02",
+        "name": "connection_lost",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "log_line",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "device_health_03",
+        "name": "sensor_fault",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "device_health_04",
+        "name": "disk_space_critical",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "device_health_05",
+        "name": "battery_critical",
+        "expected_category": "device_health",
+        "got_category": "device_health",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "ai_inference_01",
+        "name": "object_detection_multi",
+        "expected_category": "ai_inference",
+        "got_category": "ai_inference",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "ai_inference_02",
+        "name": "classification_result",
+        "expected_category": "ai_inference",
+        "got_category": "ai_inference",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "ai_inference_03",
+        "name": "anomaly_detection",
+        "expected_category": "ai_inference",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "ai_inference_04",
+        "name": "pose_estimation",
+        "expected_category": "ai_inference",
+        "got_category": "ai_inference",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "unstructured_01",
+        "name": "mixed_junk_data",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "unstructured_02",
+        "name": "random_hex",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "unstructured_03",
+        "name": "corrupted_text",
+        "expected_category": "unstructured",
+        "got_category": "unstructured",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "none"
+      },
+      {
+        "id": "unstructured_04",
+        "name": "partial_sentence",
+        "expected_category": "unstructured",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": false,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "text",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "risk_05",
+        "name": "jwt_token_exposed",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "credential"
+        ],
+        "got_flags": [
+          "credential"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 5,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "risk_06",
+        "name": "aws_key_pattern",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "credential"
+        ],
+        "got_flags": [
+          "credential"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 5,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "risk_07",
+        "name": "plaintext_credentials",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "credential"
+        ],
+        "got_flags": [
+          "credential"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 5,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "coverage_06",
+        "name": "mixed_device_status",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "gps_precise",
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 6,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "coverage_07",
+        "name": "binary_sensor_array",
+        "expected_category": "control",
+        "got_category": "control",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_array",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "coverage_08",
+        "name": "decimal_array",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_array",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "coverage_09",
+        "name": "numeric_threshold_alert",
+        "expected_category": "telemetry",
+        "got_category": "telemetry",
+        "expected_flags": [],
+        "got_flags": [],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "semantic"
+      },
+      {
+        "id": "coverage_10",
+        "name": "state_transition_event",
+        "expected_category": "events",
+        "got_category": "events",
+        "expected_flags": [
+          "long_numeric"
+        ],
+        "got_flags": [
+          "long_numeric"
+        ],
+        "category_ok": true,
+        "flags_ok": true,
+        "flag_score": 1.0,
+        "structure": "json_object",
+        "risk_score": 2,
+        "decision_strategy": "hybrid"
+      }
+    ],
+    "summary": {
+      "test_type": "single_label",
+      "total": 80,
+      "category_accuracy": 0.85,
+      "flags_accuracy": 0.963,
+      "both_accuracy": 0.838,
+      "avg_flag_match_score": 0.963
+    }
+  },
+  "multi_label": {
+    "results": [
+      {
+        "id": "real_03",
+        "name": "composite_command_telemetry",
+        "expected_categories": [
+          "control",
+          "telemetry"
+        ],
+        "got_categories": [
+          "control",
+          "events",
+          "telemetry"
+        ],
+        "set_ok": false,
+        "rank_ok": true,
+        "partial_ok": true,
+        "category_scores": {
+          "events": 0.216,
+          "control": 0.472,
+          "telemetry": 0.389
+        },
+        "structure": "json_object",
+        "risk_score": 6,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "multilabel_01",
+        "name": "control_and_telemetry_mix",
+        "expected_categories": [
+          "control",
+          "telemetry"
+        ],
+        "got_categories": [
+          "control",
+          "events",
+          "telemetry"
+        ],
+        "set_ok": false,
+        "rank_ok": true,
+        "partial_ok": true,
+        "category_scores": {
+          "events": 0.216,
+          "control": 0.472,
+          "telemetry": 0.422
+        },
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "multilabel_02",
+        "name": "telemetry_with_device_health",
+        "expected_categories": [
+          "device_health",
+          "telemetry"
+        ],
+        "got_categories": [
+          "device_health"
+        ],
+        "set_ok": false,
+        "rank_ok": false,
+        "partial_ok": true,
+        "category_scores": {
+          "device_health": 0.715
+        },
+        "structure": "json_object",
+        "risk_score": 0,
+        "decision_strategy": "hybrid"
+      },
+      {
+        "id": "multilabel_03",
+        "name": "events_and_telemetry",
+        "expected_categories": [
+          "events",
+          "telemetry"
+        ],
+        "got_categories": [
+          "control",
+          "events",
+          "telemetry"
+        ],
+        "set_ok": false,
+        "rank_ok": true,
+        "partial_ok": true,
+        "category_scores": {
+          "control": 0.21,
+          "events": 0.445,
+          "telemetry": 0.24
+        },
+        "structure": "json_object",
+        "risk_score": 6,
+        "decision_strategy": "hybrid"
+      }
+    ],
+    "summary": {
+      "test_type": "multi_label",
+      "total": 4,
+      "set_accuracy": 0.0,
+      "rank_accuracy": 0.75,
+      "partial_accuracy": 1.0
+    }
+  },
+  "per_category": {
+    "telemetry": {
+      "total": 34,
+      "correct": 31,
+      "accuracy": 0.912
+    },
+    "events": {
+      "total": 9,
+      "correct": 6,
+      "accuracy": 0.667
+    },
+    "ai_inference": {
+      "total": 7,
+      "correct": 6,
+      "accuracy": 0.857
+    },
+    "device_health": {
+      "total": 7,
+      "correct": 7,
+      "accuracy": 1.0
+    },
+    "unstructured": {
+      "total": 12,
+      "correct": 8,
+      "accuracy": 0.667
+    },
+    "control": {
+      "total": 11,
+      "correct": 10,
+      "accuracy": 0.909
+    }
+  },
+  "confusion_matrix": {
+    "ai_inference": {
+      "ai_inference": 6,
+      "control": 0,
+      "device_health": 0,
+      "events": 0,
+      "telemetry": 1,
+      "unstructured": 0
+    },
+    "control": {
+      "ai_inference": 0,
+      "control": 10,
+      "device_health": 0,
+      "events": 0,
+      "telemetry": 1,
+      "unstructured": 0
+    },
+    "device_health": {
+      "ai_inference": 0,
+      "control": 0,
+      "device_health": 7,
+      "events": 0,
+      "telemetry": 0,
+      "unstructured": 0
+    },
+    "events": {
+      "ai_inference": 0,
+      "control": 1,
+      "device_health": 0,
+      "events": 6,
+      "telemetry": 2,
+      "unstructured": 0
+    },
+    "telemetry": {
+      "ai_inference": 0,
+      "control": 0,
+      "device_health": 1,
+      "events": 0,
+      "telemetry": 31,
+      "unstructured": 2
+    },
+    "unstructured": {
+      "ai_inference": 0,
+      "control": 2,
+      "device_health": 1,
+      "events": 0,
+      "telemetry": 1,
+      "unstructured": 8
+    }
+  },
+  "metrics": {
+    "ai_inference": {
+      "precision": 1.0,
+      "recall": 0.857,
+      "f1": 0.923,
+      "support": 7,
+      "tp": 6,
+      "fp": 0,
+      "fn": 1
+    },
+    "control": {
+      "precision": 0.769,
+      "recall": 0.909,
+      "f1": 0.833,
+      "support": 11,
+      "tp": 10,
+      "fp": 3,
+      "fn": 1
+    },
+    "device_health": {
+      "precision": 0.778,
+      "recall": 1.0,
+      "f1": 0.875,
+      "support": 7,
+      "tp": 7,
+      "fp": 2,
+      "fn": 0
+    },
+    "events": {
+      "precision": 1.0,
+      "recall": 0.667,
+      "f1": 0.8,
+      "support": 9,
+      "tp": 6,
+      "fp": 0,
+      "fn": 3
+    },
+    "telemetry": {
+      "precision": 0.861,
+      "recall": 0.912,
+      "f1": 0.886,
+      "support": 34,
+      "tp": 31,
+      "fp": 5,
+      "fn": 3
+    },
+    "unstructured": {
+      "precision": 0.8,
+      "recall": 0.667,
+      "f1": 0.727,
+      "support": 12,
+      "tp": 8,
+      "fp": 2,
+      "fn": 4
+    }
+  }
+}

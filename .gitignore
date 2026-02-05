@@ -1,0 +1,4 @@
+/.venv
+/mqtt_payload_classifier/__pycache__/
+/mqtt_payload_classifier/*.pyc
+/resources/*

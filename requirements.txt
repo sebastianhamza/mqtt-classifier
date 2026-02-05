@@ -1,0 +1,6 @@
+spacy>=3.0
+numpy
+
+# Optional: model for semantic vectors
+# Command to install:
+# python -m spacy download en_core_web_md

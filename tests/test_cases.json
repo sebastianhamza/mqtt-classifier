@@ -1,0 +1,681 @@
+{
+  "test_cases": [
+    {
+      "id": "original_01",
+      "name": "serial_number",
+      "payload": "{\"registerNr\":\"SerialNo1\", \"value\":\"1115532610\"}",
+      "expected_category": "telemetry",
+      "expected_flags": ["long_numeric", "serial_no"],
+      "notes": "Register number with serial"
+    },
+    {
+      "id": "original_02",
+      "name": "ble_gateway",
+      "payload": "{\"gw_mac\":\"F9:DE:50:E3:76:6D\",\"rssi\":-76,\"aoa\":[],\"gwts\":1764517866,\"ts\":1764517866,\"data\":\"0201181BFF...\",\"coords\":\"\"}",
+      "expected_category": "events",
+      "expected_flags": ["mac_addr", "long_numeric"],
+      "notes": "BLE gateway advertisement"
+    },
+    {
+      "id": "original_03",
+      "name": "vision_objects_json",
+      "payload": "{\"objects\": [{\"confidence\": 0.87, \"frame\": 46264255, \"oid\": 31218, \"type\": \"person\"}], \"ts\": 1764517866516}",
+      "expected_category": "ai_inference",
+      "expected_flags": ["long_numeric"],
+      "notes": "Vision/detection inference result"
+    },
+    {
+      "id": "original_04",
+      "name": "robotics_position",
+      "payload": "{\"Bezeichner\":\"TCP-Kuka\", \"Position\":{\"x\":277.47,\"y\":8984.67,\"z\":842.84}}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "3D robotics coordinates"
+    },
+    {
+      "id": "original_05",
+      "name": "free_text_person",
+      "payload": "Person detected near entrance with confidence 0.92",
+      "expected_category": "ai_inference",
+      "expected_flags": [],
+      "notes": "Free text AI detection"
+    },
+    {
+      "id": "original_06",
+      "name": "battery_voltage",
+      "payload": "battery_voltage: 234.5 V",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Energy telemetry"
+    },
+    {
+      "id": "original_07",
+      "name": "large_wh",
+      "payload": "15286825.6 Wh",
+      "expected_category": "telemetry",
+      "expected_flags": ["long_numeric"],
+      "notes": "Energy value with unit"
+    },
+    {
+      "id": "original_08",
+      "name": "ble_csv",
+      "payload": "rssi:-55,adv,mac:AA:BB:CC:DD:EE:FF",
+      "expected_category": "telemetry",
+      "expected_flags": ["mac_addr"],
+      "notes": "BLE data in CSV format"
+    },
+    {
+      "id": "original_09",
+      "name": "log_error",
+      "payload": "[1556121218] <err> exception occurred in module sensor",
+      "expected_category": "device_health",
+      "expected_flags": ["long_numeric"],
+      "notes": "Error log with timestamp"
+    },
+    {
+      "id": "original_10",
+      "name": "ipv_mixture",
+      "payload": "192.168.1.194 172.17.0.1 fd7c:3b9f:96d8:ee41:d954:c9dc:e205:7a1e",
+      "expected_category": "telemetry",
+      "expected_flags": ["ipv4_local", "ipv6"],
+      "notes": "Mixed IPv4 and IPv6 addresses"
+    },
+    {
+      "id": "original_11",
+      "name": "email_and_password",
+      "payload": "user: alice@example.com, action: login, pwd: hunter2, session: 9876543210",
+      "expected_category": "unstructured",
+      "expected_flags": ["email", "credential", "long_numeric"],
+      "notes": "Credentials in text form"
+    },
+    {
+      "id": "original_12",
+      "name": "gps_coords",
+      "payload": "Location: 48.8584,2.2945; accuracy: 5m",
+      "expected_category": "telemetry",
+      "expected_flags": ["gps_precise"],
+      "notes": "GPS location telemetry data"
+    },
+    {
+      "id": "original_13",
+      "name": "long_hex_blob",
+      "payload": "A1B2C3D4E5F60718293A4B5C6D7E8F90123456789ABCDEF0123456789",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Hex blob (binary data)"
+    },
+    {
+      "id": "original_14",
+      "name": "serial_and_mac",
+      "payload": "serialno: 998877665544, device_mac: 01:23:45:67:89:AB",
+      "expected_category": "telemetry",
+      "expected_flags": ["serial_no", "mac_addr", "long_numeric"],
+      "notes": "Serial and MAC address"
+    },
+    {
+      "id": "real_01",
+      "name": "complex_telemetry_nested",
+      "payload": "{\"rssi_dBm\":-36,\"heap_B\":85224,\"CPU_temp_C\":31.30,\"ambient_temp_C\":18.38,\"ambient_humidity_RH\":45.46,\"ambient_dewpoint_C\":6.37,\"BB_5DE535\":{\"rssi\":-70,\"battery_SOC_%\":67.50,\"battery_voltage_V\":13.15,\"battery_current_A\":-0.54,\"solar_power_W\":0.00,\"battery_out_Wh\":79.54}}",
+      "expected_category": "telemetry",
+      "expected_flags": ["long_numeric"],
+      "notes": "Complex nested telemetry with multiple sensors, real data from input.txt"
+    },
+    {
+      "id": "real_02",
+      "name": "control_single_word",
+      "payload": "Off",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Simple control command (on/off)"
+    },
+    {
+      "id": "real_03",
+      "name": "composite_command_telemetry",
+      "payload": "{\"command\":0,\"timestamp\":1764510117,\"node_id\":14,\"node_name\":\"sensor1\",\"place_name\":\"Hospital\",\"gps\":{\"lat\":13.634,\"lon\":100.492},\"user_id\":99,\"temp\":3.78,\"humid\":0,\"status_door\":0,\"status_ac\":0,\"setting_temp_high\":38,\"setting_temp_on\":36,\"slave_cnt\":1,\"slaves\":[{\"temp_cnt\":5,\"temp_avr\":3.78,\"temps\":[3.83,2.71,3.81,4.76,8.44]}]}",
+      "expected_category": "telemetry",
+      "expected_flags": ["long_numeric", "gps_precise"],
+      "notes": "Composite payload: command + telemetry (temp, gps, sensor data). Should also match CONTROL category with multi-label.",
+      "multi_label_categories": ["telemetry", "control"],
+      "multi_label_confidence": {"telemetry": 0.85, "control": 0.65}
+    },
+    {
+      "id": "real_04",
+      "name": "online_status",
+      "payload": "{\"Online\":true}",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Simple status control"
+    },
+    {
+      "id": "real_05",
+      "name": "opentherm_config",
+      "payload": "{\"Cntrl\":\"Opentherm\",\"Regim\":\"NoTS\",\"BoilerSeason\":\"CHOnly\",\"id\":13375858,\"MAC\":\"08:D1:F9:72:19:CC\",\"FWver\":\"1.97.2\",\"SSID\":\"Tenda_BBD000\",\"IP\":\"192.168.0.138\",\"RSSI\":-73,\"Ch\":11,\"Mobile\":\"On\"}",
+      "expected_category": "events",
+      "expected_flags": ["ipv4_local", "mac_addr", "long_numeric"],
+      "notes": "Device config with control info and network details. Real boiler thermostat data."
+    },
+    {
+      "id": "real_06",
+      "name": "hvac_control_booleans",
+      "payload": "{\"CH1\":true,\"CH2\":false,\"DHW\":false}",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "HVAC zone control booleans"
+    },
+    {
+      "id": "real_07",
+      "name": "simple_numeric",
+      "payload": "0",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Single numeric value (ambiguous - could be control, telemetry, or status)"
+    },
+    {
+      "id": "real_08",
+      "name": "single_word_status",
+      "payload": "online",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Single status keyword (clearer signal than generic 'value')"
+    },
+    {
+      "id": "real_09",
+      "name": "temperature_value",
+      "payload": "42.43",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Single numeric value (likely telemetry)"
+    },
+    {
+      "id": "real_10",
+      "name": "temperature_with_label",
+      "payload": "temperature",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Single telemetry keyword"
+    },
+    {
+      "id": "real_11",
+      "name": "single_temperature_reading",
+      "payload": "25.5",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Bare temperature value (typical telemetry signal)"
+    },
+    {
+      "id": "real_12",
+      "name": "uptime_dict",
+      "payload": "{\"months\":0,\"days\":2,\"hours\":4,\"minutes\":40}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "System uptime structure"
+    },
+    {
+      "id": "real_13",
+      "name": "ip_address",
+      "payload": "192.168.178.26",
+      "expected_category": "telemetry",
+      "expected_flags": ["ipv4_local"],
+      "notes": "Single IP address"
+    },
+    {
+      "id": "real_14",
+      "name": "aqi_array",
+      "payload": "[{\"sitename\":\"site1\",\"county\":\"county1\",\"aqi\":\"55\",\"pollutant\":\"PM2.5\",\"status\":\"normal\",\"pm2.5\":\"9\",\"pm10\":\"18\",\"o3\":\"0\",\"co\":\"0.37\",\"so2\":\"0.7\",\"no2\":\"18\"}]",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Array of environmental/pollution telemetry"
+    },
+    {
+      "id": "real_15",
+      "name": "encrypted_data",
+      "payload": "U2FsdGVkX19Q2gIExkY1LCET534J4rFpRpu/c2F9475iV8VUcezLP9kXduUVIuL+",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Encrypted/base64 data - opaque telemetry payload"
+    },
+    {
+      "id": "real_16",
+      "name": "device_weather_data",
+      "payload": "{\"e\":1764528667,\"dt\":\"2025-11-30\",\"DW\":0,\"wk\":48,\"t\":\"18:51:07\",\"tmp\":156,\"ep\":120,\"RS\":-21,\"NE\":0,\"RE\":0,\"wf\":3}",
+      "expected_category": "telemetry",
+      "expected_flags": ["long_numeric"],
+      "notes": "Weather device telemetry"
+    },
+    {
+      "id": "edge_01",
+      "name": "empty_string",
+      "payload": "",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Edge case: empty payload"
+    },
+    {
+      "id": "edge_02",
+      "name": "whitespace_only",
+      "payload": "   \t\n  ",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Edge case: whitespace only"
+    },
+    {
+      "id": "edge_03",
+      "name": "malformed_json",
+      "payload": "{\"key\":\"value\",\"incomplete\":true",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Malformed JSON - still has structure, treat as corrupted telemetry"
+    },
+    {
+      "id": "edge_04",
+      "name": "json_with_trailing_text",
+      "payload": "{\"status\":\"ok\"}\nExtra text here",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Edge case: JSON with trailing garbage"
+    },
+    {
+      "id": "edge_05",
+      "name": "numeric_float_pi",
+      "payload": "3.14159",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Decimal number that clearly represents a measurement"
+    },
+    {
+      "id": "edge_06",
+      "name": "numeric_string_one",
+      "payload": "1",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Edge case: single one (often boolean/control)"
+    },
+    {
+      "id": "risk_01",
+      "name": "password_in_json",
+      "payload": "{\"user\":\"admin\",\"password\":\"secret123\"}",
+      "expected_category": "telemetry",
+      "expected_flags": ["credential"],
+      "notes": "Credential risk: password in JSON - still structured data (telemetry with risk)"
+    },
+    {
+      "id": "risk_02",
+      "name": "api_key_exposure",
+      "payload": "{\"api_key\":\"sk-proj-1234567890abcdef\",\"endpoint\":\"https://api.example.com\"}",
+      "expected_category": "unstructured",
+      "expected_flags": ["credential"],
+      "notes": "Credential risk: API key exposure"
+    },
+    {
+      "id": "risk_03",
+      "name": "public_ip_exposure",
+      "payload": "server_ip: 8.8.8.8",
+      "expected_category": "telemetry",
+      "expected_flags": ["ipv4_public"],
+      "notes": "Risk: public IP address"
+    },
+    {
+      "id": "risk_04",
+      "name": "mac_address_leak",
+      "payload": "device_mac: AA:BB:CC:DD:EE:FF",
+      "expected_category": "telemetry",
+      "expected_flags": ["mac_addr"],
+      "notes": "Risk: MAC address (device identifier)"
+    },
+    {
+      "id": "coverage_01",
+      "name": "multiple_keywords_telemetry",
+      "payload": "voltage: 24.5, current: 3.2, power: 78.4, temperature: 35",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Multiple telemetry keywords should increase confidence"
+    },
+    {
+      "id": "coverage_02",
+      "name": "multiple_keywords_control",
+      "payload": "command: start, action: enable, setpoint: 50",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Multiple control keywords"
+    },
+    {
+      "id": "coverage_03",
+      "name": "health_warning_error",
+      "payload": "warning: sensor_fault, error: connection_lost, status: critical",
+      "expected_category": "device_health",
+      "expected_flags": [],
+      "notes": "Multiple health/error keywords"
+    },
+    {
+      "id": "coverage_04",
+      "name": "event_triggers",
+      "payload": "event: motion_detected, trigger: zone_2, timestamp: 1704067200",
+      "expected_category": "events",
+      "expected_flags": ["long_numeric"],
+      "notes": "Event-related keywords"
+    },
+    {
+      "id": "coverage_05",
+      "name": "inference_objects",
+      "payload": "objects detected: person, confidence: 0.92, bounding_box: [10,20,100,200]",
+      "expected_category": "ai_inference",
+      "expected_flags": [],
+      "notes": "AI inference keywords"
+    },
+    {
+      "id": "multilabel_01",
+      "name": "control_and_telemetry_mix",
+      "payload": "{\"mode\":\"auto\",\"command\":\"start\",\"temperature\":22.5,\"humidity\":45,\"setpoint\":25}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Contains both CONTROL and TELEMETRY signals equally",
+      "multi_label_categories": ["control", "telemetry"]
+    },
+    {
+      "id": "multilabel_02",
+      "name": "telemetry_with_device_health",
+      "payload": "{\"temp\":25.3,\"humidity\":60,\"warning\":\"high_temperature_alert\",\"sensor_status\":\"degraded\"}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Telemetry with embedded health warning",
+      "multi_label_categories": ["telemetry", "device_health"]
+    },
+    {
+      "id": "multilabel_03",
+      "name": "events_and_telemetry",
+      "payload": "{\"event\":\"motion_detected\",\"timestamp\":1704067200,\"location\":\"zone_1\",\"rssi\":-65,\"device_id\":\"sensor_001\"}",
+      "expected_category": "events",
+      "expected_flags": ["long_numeric"],
+      "notes": "Event with telemetry data",
+      "multi_label_categories": ["events", "telemetry"]
+    },
+    {
+      "id": "telemetry_01",
+      "name": "environmental_sensors",
+      "payload": "{\"temperature\":23.5,\"humidity\":55,\"pressure\":1013.25,\"co2_ppm\":450}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Environmental monitoring data"
+    },
+    {
+      "id": "telemetry_02",
+      "name": "power_consumption",
+      "payload": "{\"voltage\":230,\"current\":2.5,\"power\":575,\"energy_today\":12.3}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Power/energy telemetry"
+    },
+    {
+      "id": "telemetry_03",
+      "name": "gps_with_accuracy",
+      "payload": "{\"latitude\":48.8566,\"longitude\":2.3522,\"accuracy\":5.2,\"altitude\":35}",
+      "expected_category": "telemetry",
+      "expected_flags": ["gps_precise"],
+      "notes": "GPS coordinates with accuracy metric"
+    },
+    {
+      "id": "telemetry_04",
+      "name": "water_meter_reading",
+      "payload": "cubic_meters: 1234.56",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Utility meter reading"
+    },
+    {
+      "id": "telemetry_05",
+      "name": "humidity_and_temp",
+      "payload": "humidity=65.2,temperature=22.1",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Key-value telemetry format"
+    },
+    {
+      "id": "control_01",
+      "name": "dimmer_level",
+      "payload": "{\"brightness\":75,\"color_temp\":3000}",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Light control parameters"
+    },
+    {
+      "id": "control_02",
+      "name": "hvac_temperature_setpoint",
+      "payload": "{\"mode\":\"heat\",\"setpoint\":21.0,\"fan\":\"auto\"}",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "HVAC control settings"
+    },
+    {
+      "id": "control_03",
+      "name": "door_lock_command",
+      "payload": "{\"action\":\"lock\",\"device_id\":\"lock_001\"}",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Door lock control command"
+    },
+    {
+      "id": "control_04",
+      "name": "pump_start_stop",
+      "payload": "start_pump",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Pump control command"
+    },
+    {
+      "id": "control_05",
+      "name": "multiple_switches",
+      "payload": "{\"pump\":true,\"valve\":false,\"heater\":true}",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Multiple boolean switches"
+    },
+    {
+      "id": "events_01",
+      "name": "door_opening_event",
+      "payload": "{\"event_type\":\"door_open\",\"door_id\":\"front_door\",\"timestamp\":1704067200}",
+      "expected_category": "events",
+      "expected_flags": ["long_numeric"],
+      "notes": "Door sensor event"
+    },
+    {
+      "id": "events_02",
+      "name": "alert_notification",
+      "payload": "{\"alert\":\"high_temperature\",\"sensor\":\"oven\",\"value\":350}",
+      "expected_category": "events",
+      "expected_flags": [],
+      "notes": "Sensor alert event"
+    },
+    {
+      "id": "events_03",
+      "name": "ble_beacon_advertisement",
+      "payload": "{\"beacon_id\":\"ibeacon_01\",\"rssi\":-45,\"major\":100,\"minor\":200}",
+      "expected_category": "events",
+      "expected_flags": [],
+      "notes": "BLE beacon advertisement"
+    },
+    {
+      "id": "events_04",
+      "name": "motion_detection_alert",
+      "payload": "Motion detected in zone 3 at 15:45:32",
+      "expected_category": "events",
+      "expected_flags": [],
+      "notes": "Motion detection alert text"
+    },
+    {
+      "id": "events_05",
+      "name": "system_startup_event",
+      "payload": "{\"event\":\"system_startup\",\"version\":\"2.1.0\",\"uptime\":0}",
+      "expected_category": "events",
+      "expected_flags": [],
+      "notes": "System lifecycle event"
+    },
+    {
+      "id": "device_health_01",
+      "name": "memory_warning",
+      "payload": "{\"status\":\"warning\",\"memory_used\":85,\"memory_total\":100}",
+      "expected_category": "device_health",
+      "expected_flags": [],
+      "notes": "Memory usage health warning"
+    },
+    {
+      "id": "device_health_02",
+      "name": "connection_lost",
+      "payload": "error: connection_lost to mqtt_broker",
+      "expected_category": "device_health",
+      "expected_flags": [],
+      "notes": "Connection error log"
+    },
+    {
+      "id": "device_health_03",
+      "name": "sensor_fault",
+      "payload": "{\"fault\":true,\"sensor_id\":\"temp_01\",\"fault_code\":0x42}",
+      "expected_category": "device_health",
+      "expected_flags": [],
+      "notes": "Sensor malfunction report"
+    },
+    {
+      "id": "device_health_04",
+      "name": "disk_space_critical",
+      "payload": "{\"warning\":\"disk_space_low\",\"available_mb\":50,\"threshold_mb\":100}",
+      "expected_category": "device_health",
+      "expected_flags": [],
+      "notes": "Disk space critical alert"
+    },
+    {
+      "id": "device_health_05",
+      "name": "battery_critical",
+      "payload": "{\"battery_percent\":3,\"status\":\"critical\"}",
+      "expected_category": "device_health",
+      "expected_flags": [],
+      "notes": "Battery critically low"
+    },
+    {
+      "id": "ai_inference_01",
+      "name": "object_detection_multi",
+      "payload": "{\"objects\":[{\"type\":\"person\",\"confidence\":0.95,\"bbox\":[10,20,200,300]},{\"type\":\"car\",\"confidence\":0.87,\"bbox\":[400,50,800,300]}]}",
+      "expected_category": "ai_inference",
+      "expected_flags": [],
+      "notes": "Multiple object detection results"
+    },
+    {
+      "id": "ai_inference_02",
+      "name": "classification_result",
+      "payload": "{\"image_id\":\"img_001\",\"classification\":\"cat\",\"confidence\":0.92,\"alternatives\":[{\"label\":\"dog\",\"score\":0.06}]}",
+      "expected_category": "ai_inference",
+      "expected_flags": [],
+      "notes": "Image classification with alternatives"
+    },
+    {
+      "id": "ai_inference_03",
+      "name": "anomaly_detection",
+      "payload": "{\"anomaly_score\":0.87,\"is_anomaly\":true,\"features\":[1.2,3.4,5.6]}",
+      "expected_category": "ai_inference",
+      "expected_flags": [],
+      "notes": "ML anomaly detection result"
+    },
+    {
+      "id": "ai_inference_04",
+      "name": "pose_estimation",
+      "payload": "{\"frame_id\":1234,\"poses\":[{\"keypoints\":[[10,20],[30,40],[50,60]],\"confidence\":0.91}]}",
+      "expected_category": "ai_inference",
+      "expected_flags": [],
+      "notes": "Pose estimation inference"
+    },
+    {
+      "id": "unstructured_01",
+      "name": "mixed_junk_data",
+      "payload": "abc123!@#xYz789$%^",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Random/junk data"
+    },
+    {
+      "id": "unstructured_02",
+      "name": "random_hex",
+      "payload": "4A5B6C7D8E9F0A1B2C3D4E5F",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Random hex string"
+    },
+    {
+      "id": "unstructured_03",
+      "name": "corrupted_text",
+      "payload": "═══════════════════════════════════",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Corrupted/binary-like characters"
+    },
+    {
+      "id": "unstructured_04",
+      "name": "partial_sentence",
+      "payload": "the quick brown fox",
+      "expected_category": "unstructured",
+      "expected_flags": [],
+      "notes": "Generic text without context"
+    },
+    {
+      "id": "risk_05",
+      "name": "jwt_token_exposed",
+      "payload": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_XgL0n3I9PlFUP0THsR8U\"}",
+      "expected_category": "telemetry",
+      "expected_flags": ["credential"],
+      "notes": "JWT token exposed"
+    },
+    {
+      "id": "risk_06",
+      "name": "aws_key_pattern",
+      "payload": "{\"key_id\":\"AKIAIOSFODNN7EXAMPLE\",\"access_key\":\"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\"}",
+      "expected_category": "telemetry",
+      "expected_flags": ["credential"],
+      "notes": "AWS credentials exposed"
+    },
+    {
+      "id": "risk_07",
+      "name": "plaintext_credentials",
+      "payload": "{\"username\":\"admin\",\"password\":\"P@ssw0rd!\"}",
+      "expected_category": "telemetry",
+      "expected_flags": ["credential"],
+      "notes": "Plaintext credentials exposed"
+    },
+    {
+      "id": "coverage_06",
+      "name": "mixed_device_status",
+      "payload": "{\"online\":true,\"signal_strength\":85,\"last_seen\":1704067200,\"location\":\"kitchen\"}",
+      "expected_category": "telemetry",
+      "expected_flags": ["long_numeric"],
+      "notes": "Device status with multiple metrics"
+    },
+    {
+      "id": "coverage_07",
+      "name": "binary_sensor_array",
+      "payload": "[true,false,true,false,true]",
+      "expected_category": "control",
+      "expected_flags": [],
+      "notes": "Array of boolean values"
+    },
+    {
+      "id": "coverage_08",
+      "name": "decimal_array",
+      "payload": "[23.5,24.1,22.8,25.3,23.9]",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Array of measurement values"
+    },
+    {
+      "id": "coverage_09",
+      "name": "numeric_threshold_alert",
+      "payload": "{\"value\":95.5,\"threshold\":90,\"exceeded\":true,\"unit\":\"percent\"}",
+      "expected_category": "telemetry",
+      "expected_flags": [],
+      "notes": "Threshold crossing telemetry"
+    },
+    {
+      "id": "coverage_10",
+      "name": "state_transition_event",
+      "payload": "{\"from_state\":\"idle\",\"to_state\":\"running\",\"timestamp\":1704067200,\"reason\":\"user_trigger\"}",
+      "expected_category": "events",
+      "expected_flags": ["long_numeric"],
+      "notes": "State machine transition event"
+    }
+  ]
+}
