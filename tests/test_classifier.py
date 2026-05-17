@@ -12,7 +12,7 @@ from mqtt_payload_classifier.constants import Category, RiskFlag
 
 
 def load_test_cases(json_file: str) -> List[Dict]:
-    with open(json_file, 'r', encoding='utf-8') as f:
+    with open(json_file, 'r', encoding='utf-8-sig') as f:
         data = json.load(f)
     return data.get('test_cases', [])
 
@@ -270,9 +270,9 @@ def print_results(evaluation: Dict, test_type: str = "single_label"):
         failed = [r for r in results if not r.get('set_ok')]
     
     if failed:
-        print(f"FAILED CASES ({len(failed)} total, showing first 20):")
+        print(f"FAILED CASES ({len(failed)} total, showing first 40):")
         print("-" * 80)
-        for result in failed[:20]:
+        for result in failed[:40]:
             print(f"\n  [{result['id']}] {result['name']}")
             if 'expected_category' in result:
                 print(f"    Expected: {result['expected_category']}, Got: {result['got_category']}")
